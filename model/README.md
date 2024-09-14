@@ -1,94 +1,97 @@
 ## This model is the best UNet model for Nuclei Segmentation
 ## trained on 30 images from AitsLab and 100 images from Broad Institute nuclei images (130 images)
+## Test and validated on extra 10, and 10 nuclei images annotated by AitsLab published and shared on 
+    Arvidsson, Malou, Salma Kazemi Rashed, and Sonja Aits. "An annotated high-content fluorescence microscopy dataset with Hoechst 33342-stained nuclei and manually labelled outlines." Data in Brief 46 (2023): 108769.
+
 ## The structure of the UNet is as follows
 
 # returns a core model from gray input 
-def get_new_core(dim1, dim2, input_dim):  #not used this one
-    
-    x = Input(shape=(dim1, dim2, input_dim))
-    
-    a = Conv2D(64, (3, 3), activation="relu", padding="same")(x)  
-    a = BatchNormalization(momentum=0.9)(a)
 
-    a = Conv2D(64, (3, 3), activation="relu", padding="same")(a)
-    a = BatchNormalization(momentum=0.9)(a)
+    def get_new_core(dim1, dim2, input_dim):  #not used this one
+        
+        x = Input(shape=(dim1, dim2, input_dim))
+        
+        a = Conv2D(64, (3, 3), activation="relu", padding="same")(x)  
+        a = BatchNormalization(momentum=0.9)(a)
 
-    
-    y = MaxPooling2D()(a)
+        a = Conv2D(64, (3, 3), activation="relu", padding="same")(a)
+        a = BatchNormalization(momentum=0.9)(a)
 
-    b = Conv2D(128, (3, 3), activation="relu", padding="same")(y)
-    b = BatchNormalization(momentum=0.9)(b)
+        
+        y = MaxPooling2D()(a)
 
-    b = Conv2D(128, (3, 3), activation="relu", padding="same")(b)
-    b = BatchNormalization(momentum=0.9)(b)
+        b = Conv2D(128, (3, 3), activation="relu", padding="same")(y)
+        b = BatchNormalization(momentum=0.9)(b)
 
-    
-    y = keras.layers.MaxPooling2D()(b)
+        b = Conv2D(128, (3, 3), activation="relu", padding="same")(b)
+        b = BatchNormalization(momentum=0.9)(b)
 
-    c = Conv2D(256, (3, 3), activation="relu", padding="same")(y)
-    c = BatchNormalization(momentum=0.9)(c)
+        
+        y = keras.layers.MaxPooling2D()(b)
 
-    c = Conv2D(256, (3, 3), activation="relu", padding="same")(c)
-    c = BatchNormalization(momentum=0.9)(c)
+        c = Conv2D(256, (3, 3), activation="relu", padding="same")(y)
+        c = BatchNormalization(momentum=0.9)(c)
 
-    
-    y = MaxPooling2D()(c)
+        c = Conv2D(256, (3, 3), activation="relu", padding="same")(c)
+        c = BatchNormalization(momentum=0.9)(c)
 
-    d = Conv2D(512, (3, 3), activation="relu", padding="same")(y)
-    d = BatchNormalization(momentum=0.9)(d)
+        
+        y = MaxPooling2D()(c)
 
-    d = Conv2D(512,(3, 3), activation="relu", padding="same")(d)
-    d = BatchNormalization(momentum=0.9)(d)
+        d = Conv2D(512, (3, 3), activation="relu", padding="same")(y)
+        d = BatchNormalization(momentum=0.9)(d)
 
-    
-    # UP
-
-    d = UpSampling2D()(d)
-
-    y = Concatenate(axis=3)([d, c])#, axis=3)
-
-    e = Conv2D(256, (3, 3), activation="relu", padding="same")(y)
-    e = BatchNormalization(momentum=0.9)(e)
-
-    e = Conv2D(256,(3, 3), activation="relu", padding="same")(e)
-    e = BatchNormalization(momentum=0.9)(e)
-
-    e = UpSampling2D()(e)
+        d = Conv2D(512,(3, 3), activation="relu", padding="same")(d)
+        d = BatchNormalization(momentum=0.9)(d)
 
     
-    y = Concatenate(axis=3)([e, b])#, axis=3)
+        # UP
 
-    f = Conv2D(128, (3, 3), activation="relu", padding="same")(y)
-    f = BatchNormalization(momentum=0.9)(f)
+        d = UpSampling2D()(d)
 
-    f = Conv2D(128, (3, 3), activation="relu", padding="same")(f)
-    f = BatchNormalization(momentum=0.9)(f)
+        y = Concatenate(axis=3)([d, c])#, axis=3)
 
-    f = UpSampling2D()(f)
+        e = Conv2D(256, (3, 3), activation="relu", padding="same")(y)
+        e = BatchNormalization(momentum=0.9)(e)
 
-    
-    y = Concatenate(axis=3)([f, a])#, axis=3)
+        e = Conv2D(256,(3, 3), activation="relu", padding="same")(e)
+        e = BatchNormalization(momentum=0.9)(e)
 
-    y = Conv2D(64, (3, 3), activation="relu", padding="same")(y)
-    y = BatchNormalization(momentum=0.9)(y)
+        e = UpSampling2D()(e)
 
-    y = Conv2D(64, (3, 3), activation="relu", padding="same")(y)
-    y = BatchNormalization(momentum=0.9)(y)
+        
+        y = Concatenate(axis=3)([e, b])#, axis=3)
 
-    return [x, y]
+        f = Conv2D(128, (3, 3), activation="relu", padding="same")(y)
+        f = BatchNormalization(momentum=0.9)(f)
 
-def get_model_3_class(dim1, dim2, input_dim = 1, activation="softmax"):
-    
-    [x, y] = get_core(dim1, dim2, input_dim)
+        f = Conv2D(128, (3, 3), activation="relu", padding="same")(f)
+        f = BatchNormalization(momentum=0.9)(f)
 
-    y  = keras.layers.Convolution2D(3,1,1,**option_dict_conv)(y)
+        f = UpSampling2D()(f)
 
-    if activation is not None:
-        y = keras.layers.Activation(activation)(y)
+        
+        y = Concatenate(axis=3)([f, a])#, axis=3)
 
-    model = keras.models.Model(x, y)
-    
-    return model
+        y = Conv2D(64, (3, 3), activation="relu", padding="same")(y)
+        y = BatchNormalization(momentum=0.9)(y)
+
+        y = Conv2D(64, (3, 3), activation="relu", padding="same")(y)
+        y = BatchNormalization(momentum=0.9)(y)
+
+        return [x, y]
+
+    def get_model_3_class(dim1, dim2, input_dim = 1, activation="softmax"):
+        
+        [x, y] = get_core(dim1, dim2, input_dim)
+
+        y  = keras.layers.Convolution2D(3,1,1,**option_dict_conv)(y)
+
+        if activation is not None:
+            y = keras.layers.Activation(activation)(y)
+
+        model = keras.models.Model(x, y)
+        
+        return model
  
 
- 
