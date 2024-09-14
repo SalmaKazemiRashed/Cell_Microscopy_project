@@ -1,11 +1,13 @@
 ## This model is the best UNet model for Nuclei Segmentation
 ## trained on 30 images from AitsLab and 100 images from Broad Institute nuclei images (130 images)
 ## Test and validated on extra 10, and 10 nuclei images annotated by AitsLab published and shared on 
-    Arvidsson, Malou, Salma Kazemi Rashed, and Sonja Aits. "An annotated high-content fluorescence microscopy dataset with Hoechst 33342-stained nuclei and manually labelled outlines." Data in Brief 46 (2023): 108769.
+    Arvidsson, Malou, Salma Kazemi Rashed, and Sonja Aits.
+    "An annotated high-content fluorescence microscopy dataset with Hoechst 33342-stained nuclei and manually labelled outlines."
+    Data in Brief 46 (2023): 108769.
 
 ## The structure of the UNet is as follows
 
-# returns a core model from gray input 
+## returns a core model from gray input 
 
     def get_new_core(dim1, dim2, input_dim):  #not used this one
         
