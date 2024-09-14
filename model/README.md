@@ -7,7 +7,8 @@
 
 ## The structure of the UNet is as follows
 
-## returns a core model from gray input 
+
+    ##### returns a core model from gray input 
 
     def get_new_core(dim1, dim2, input_dim):  #not used this one
         
