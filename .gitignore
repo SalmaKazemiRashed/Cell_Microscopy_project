@@ -3,4 +3,4 @@
 ./model/HoverNet/best_model_epoch_37.tar
 ./model/HoverNet/
 *.sif
-
+./doc/_build/
