@@ -2,4 +2,5 @@
 ./model/HoverNet/best_model_epoch_23.tar
 ./model/HoverNet/best_model_epoch_37.tar
 ./model/HoverNet/
+*.sif
 
