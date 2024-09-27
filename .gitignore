@@ -5,3 +5,6 @@
 *.sif
 ./doc/_build/
 *.sif
+_build/
+temp/
+cache/
