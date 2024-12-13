@@ -1,4 +1,7 @@
-# Some feature
+# Preprocessing
+
+The original images were in .C01 microcopic format.
+
 
 ## Subsection
 
