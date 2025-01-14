@@ -9,17 +9,20 @@ For accessing Swestore, we have used two tools.
 
 First, we have used lftp through terminal: 
 ```bash
-lftp
+lftp https://username@webdav.swestore.se/snic/folder/
 ```
 
+For downloading whole plate we used:
 ```bash
 get plate_number.tar.gz
 ```
-for downloading whole plate or 
 
+For uploading files we have used:
 ```bash
 put plate_number.tar.gz
 ```
-for uploading files.
+
+The other way to access files on Swestore was winscp tool which is a win-based tool.
 
 
+![WinSCP](_static/WinSCP.png)
