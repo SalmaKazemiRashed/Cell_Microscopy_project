@@ -1,6 +1,6 @@
 # Preprocessing
 
-The original images were in .C01 microcopic format stored on (Swestore)[https://docs.swestore.se/]
+The original images were in .C01 microcopic format stored on [Swestore](https://docs.swestore.se/)
 
 
 ## Access to Swestore
