@@ -1,17 +1,25 @@
 # Preprocessing
 
-The original images were in .C01 microcopic format.
+The original images were in .C01 microcopic format stored on (Swestore)[https://docs.swestore.se/]
 
 
-## Subsection
+## Access to Swestore
 
-Exciting documentation in here.
-Let's make a list (empty surrounding lines required):
+For accessing Swestore, we have used two tools.
 
-- item 1
+First, we have used lftp through terminal: 
+```bash
+lftp
+```
 
-  - nested item 1
-  - nested item 2
+```bash
+get plate_number.tar.gz
+```
+for downloading whole plate or 
 
-- item 2
-- item 3
+```bash
+put plate_number.tar.gz
+```
+for uploading files.
+
+
