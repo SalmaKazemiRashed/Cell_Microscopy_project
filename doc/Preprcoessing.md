@@ -38,18 +38,18 @@ For extracting and converting the format of images we have used "bfconvert" func
 
 This is conducted through command line or  preprocessing/extract_conversion.py script and subprocess library.
 
-## Normalize script
+## Normalization script
 
 The following command should run over images after bfconvert command to normalize images to 8-bit format,
 
-´´´bash
+```bash
 ls *.png ; while read file; do convert file -auto-level  -depth 8 -define quantum:format=unsigned -type grayscale file; done
-´´´´
+```
 
 or through extract_conversion.py script.
 
 
-## Check number of images
+## Check validity of plates
 
 For a correct, complete plate we should have A-P rows as well as 01-24 columns (6144).
 
@@ -58,7 +58,7 @@ For a correct, complete plate we should have A-P rows as well as 01-24 columns (
 with the following command we could see if each well (A01-P24) and 16 images per well exist.
 
 
-´´´bash
+```bash
 ls | cut -d _ -f 3 | cut -b 1-3 | sort |  uniq -c 
-´´´
+```
 
