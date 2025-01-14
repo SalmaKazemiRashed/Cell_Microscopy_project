@@ -7,7 +7,7 @@ The original images were in .C01 microcopic format stored on [Swestore](https://
 
 For accessing Swestore, we have used two different tools.
 
-### Lftp
+#### Lftp
 
 First, we have used lftp through terminal: 
 ```bash
@@ -24,7 +24,7 @@ For uploading files we have used:
 put plate_number.tar.gz
 ```
 
-### WinSCP
+#### WinSCP
 
 The other way to access files on Swestore was winscp tool which is a win-based tool.
 
