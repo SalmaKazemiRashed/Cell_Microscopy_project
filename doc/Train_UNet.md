@@ -87,35 +87,40 @@ Three class (background, inside and boundary pcs) images are as follows:
 
 After having directories in the following order:
 
-data --
-     -- 0_raw_images
-     -- 1_raw_annotations
-     -- 2_norm_images
-     -- 2_norm_images_merged
-     -- 3_boundary_labels
-     -- 4_filelists
-        -- TEST.txt
-        -- training.txt
-        -- VALIDATION
-src
-    -- utils
-    -- preprocessing.py
-    -- training.py
-    -- prediction.py
-    -- evaluation.ipynb
-experiments
-    -- experiment_name
-        -- models
-            -- model_xxx.hdf5
-        -- log.csv
-        -- model.hdf5 
-experiment_name
-    -- out
-        -- prob
-        -- segm
-    -- best_results.txt
+UNet--
+        data --
+            -- 0_raw_images
+            -- 1_raw_annotations
+            -- 2_norm_images
+            -- 2_norm_images_merged
+            -- 3_boundary_labels
+            -- 4_filelists
+                -- TEST.txt
+                -- training.txt
+                -- VALIDATION
+        src
+            -- utils
+            -- preprocessing.py
+            -- training.py
+            -- prediction.py
+            -- evaluation.ipynb
+        experiments
+            -- experiment_name
+                -- models
+                    -- model_xxx.hdf5
+                -- log.csv
+                -- model.hdf5 
+        experiment_name
+            -- out
+                -- prob
+                -- segm
+            -- best_results.txt
 
+we trained models with:
 
+```bash
+python3 training.py
+```
 
 
 
