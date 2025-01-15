@@ -55,7 +55,10 @@ Then add a job and start to annotate. Annotations are polygons and not polyline.
 ## Published Datasets
 
 The annotated datasets are published.
+
+
 [Nuclei](https://www.sciencedirect.com/science/article/pii/S2352340922009726)
+
 
 [Cytosol](https://www.sciencedirect.com/science/article/pii/S2352340924011107)
 
@@ -73,10 +76,46 @@ example of raw annotated image
 
 ![annotated](_static/annot.png)
 
+
 Three class (background, inside and boundary pcs) images are as follows:
+
 
 ![boundary](_static/class.png)
 
 
 ## Training
+
+After having directories in the following order:
+
+data --
+     -- 0_raw_images
+     -- 1_raw_annotations
+     -- 2_norm_images
+     -- 2_norm_images_merged
+     -- 3_boundary_labels
+     -- 4_filelists
+        -- TEST.txt
+        -- training.txt
+        -- VALIDATION
+src
+    -- utils
+    -- preprocessing.py
+    -- training.py
+    -- prediction.py
+    -- evaluation.ipynb
+experiments
+    -- experiment_name
+        -- models
+            -- model_xxx.hdf5
+        -- log.csv
+        -- model.hdf5 
+experiment_name
+    -- out
+        -- prob
+        -- segm
+    -- best_results.txt
+
+
+
+
 
