@@ -74,7 +74,7 @@ example of raw annotated image
 ![annotated](_static/annot.png)
 
 
-![3class](_static/class.png)
+![boundary](_static/class.png)
 
 
 ## Training
