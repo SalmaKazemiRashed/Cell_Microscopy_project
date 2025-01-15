@@ -73,6 +73,7 @@ example of raw annotated image
 
 ![annotated](_static/annot.png)
 
+Three class (background, inside and boundary pcs) images are as follows:
 
 ![boundary](_static/class.png)
 
