@@ -87,6 +87,7 @@ Three class (background, inside and boundary pcs) images are as follows:
 
 After having directories in the following order:
 
+```plaintext
 UNet/
 ├── data
 │   ├── 0_raw_images
@@ -106,16 +107,16 @@ UNet/
 │   ├── evaluation.ipynb
 │   └── experiments
 │       ├── experiment_name
-│           ├── models
-│           │   ├── model_xxx.hdf5
-│           ├── log.csv
-│           ├── model.hdf5
-│           ├── out
-│           │   ├── prob
-│           │   └── segm
-│           └── best_results.txt
+│       │   ├── models
+│       │   │   ├── model_xxx.hdf5
+│       │   ├── log.csv
+│       │   ├── model.hdf5
+│       │   ├── out
+│       │   │   ├── prob
+│       │   │   └── segm
+│       │   └── best_results.txt
 
-
+```
 
 
 we trained models with:
