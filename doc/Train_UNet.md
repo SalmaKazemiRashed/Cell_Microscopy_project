@@ -87,6 +87,7 @@ Three class (background, inside and boundary pcs) images are as follows:
 
 After having directories in the following order:
 
+```plaintext
 UNet/
 ├── data
 │   ├── 0_raw_images
@@ -104,18 +105,18 @@ UNet/
 │   ├── training.py
 │   ├── prediction.py
 │   ├── evaluation.ipynb
-│   └── experiments
+│   ├──experiments
 │       ├── experiment_name
-│           ├── models
-│           │   ├── model_xxx.hdf5
-│           ├── log.csv
-│           ├── model.hdf5
-│           ├── out
-│           │   ├── prob
-│           │   └── segm
-│           └── best_results.txt
+│       │   ├── models
+│       │   │   ├── model_xxx.hdf5
+│       │   ├── log.csv
+│       │   ├── model.hdf5
+│   └── experiment_name
+│       ├── out
+│       │   │   ├── prob
+│       │   │   └── segm
 
-
+```
 
 
 we trained models with:
@@ -124,5 +125,12 @@ we trained models with:
 python3 training.py
 ```
 
+## Prediction
 
+
+we predicted the segmentation masks of validation and test images with the best model :
+
+```bash
+python3 prediction.py
+```
 
