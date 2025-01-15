@@ -106,14 +106,14 @@ UNet/
 │   ├── evaluation.ipynb
 │   └── experiments
 │       ├── experiment_name
-│       │   ├── models
-│       │   │   ├── model_xxx.hdf5
-│       │   ├── log.csv
-│       │   ├── model.hdf5
-│       │   ├── out
-│       │   │   ├── prob
-│       │   │   └── segm
-│       │   └── best_results.txt
+│           ├── models
+│           │   ├── model_xxx.hdf5
+│           ├── log.csv
+│           ├── model.hdf5
+│           ├── out
+│           │   ├── prob
+│           │   └── segm
+│           └── best_results.txt
 
 
 
