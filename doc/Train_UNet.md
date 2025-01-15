@@ -105,16 +105,16 @@ UNet/
 │   ├── training.py
 │   ├── prediction.py
 │   ├── evaluation.ipynb
-│   └── experiments
+│   ├──experiments
 │       ├── experiment_name
 │       │   ├── models
 │       │   │   ├── model_xxx.hdf5
 │       │   ├── log.csv
 │       │   ├── model.hdf5
-│       │   ├── out
+│   └── experiment_name
+│       ├── out
 │       │   │   ├── prob
 │       │   │   └── segm
-│       │   └── best_results.txt
 
 ```
 
