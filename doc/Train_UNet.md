@@ -70,7 +70,9 @@ python3 preprocessing.py
 ```
 example of raw annotated image
 
+
 ![annotated](_static/annot.png)
+
 
 ![3class](_static/class.png)
 
