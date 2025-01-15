@@ -1,4 +1,4 @@
-# U-Net train
+# U-Net training
 
 For training U-Net models, the code is taken and modified from [carpenterLab](https://github.com/carpenterlab/unet4nuclei/tree/master/unet4nuclei).
 
@@ -35,7 +35,7 @@ sudo docker exec -it cvat_server bash -ic 'python3 ~/manage.py createsuperuser'
 ```
 
 If you don’t have winpty installed or the above command does not work, you may also try the following:
-## Math
+
 
 ```bash
 # enter docker image first
@@ -52,11 +52,16 @@ Then open localhost:8080 on my browser. In cvat also I can define projects and l
 Then add a job and start to annotate. Annotations are polygons and not polyline. 
 
 
+## Published Datasets
+
 The annotated datasets are published.
 [Nuclei](https://www.sciencedirect.com/science/article/pii/S2352340922009726)
 
 [Cytosol](https://www.sciencedirect.com/science/article/pii/S2352340924011107)
 
+
+
+## Preprcoessing
 
 After exporting annotation masks from cvat, train/UNet/preprocessing.py script will run over masks to create boundary images.
 
@@ -68,3 +73,7 @@ example of raw annotated image
 ![annotated](_static/annot.png)
 
 ![3class](_static/class.png)
+
+
+## Training
+
