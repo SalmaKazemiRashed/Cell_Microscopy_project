@@ -128,7 +128,7 @@ python3 training.py
 ## Prediction
 
 
-we predicted the segmentation masks of validation and test images with the best model :
+we predicted the segmentation masks of validation and test images with the best model:
 
 ```bash
 python3 prediction.py
