@@ -4,7 +4,7 @@
 The code of HoVer-Net taken from 
 
 ```bash
-  git clone https://github.com/vqdang/hover_net.git
+git clone https://github.com/vqdang/hover_net.git
 ```
 
 The data required to be in .mat format as having centeroind points of objects. This has been done through find_middle_point.m script written in MATLaB.
@@ -12,6 +12,9 @@ The data required to be in .mat format as having centeroind points of objects. T
 An example of annotated masks with centric points:
 
 ![annotated](_static/img_center.png)
+
+
+The training, prediction and evaluation scripts for HoverNet are as follows:
 
 
 ```plaintext
