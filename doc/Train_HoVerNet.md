@@ -44,7 +44,7 @@ HoverNet/
 ├── output
 ```
 
-We have used hovernet pytorch version by env provided [here](https://github.com/vqdang/hover_net.git). 
+We have run hovernet pytorch version using the conda env provided [here](https://github.com/vqdang/hover_net.git). 
 and also updating as follows:
 
 ```bash
