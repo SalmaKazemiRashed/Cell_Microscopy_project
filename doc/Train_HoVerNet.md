@@ -52,7 +52,7 @@ pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio===0.7.2 -f ht
 
 ```
 
-extract_patches.py has been used for extracting smaller patches from train set saved as .npy numpy array.
+extract_patches.py has been used for extracting smaller patches from train set saved as .npy numpy arrays.
 
 For fine-tuning HoverNet model hovernet_original_consep_notype_tf2pytorch.tar pretrained model were used from pre_models directory.
 
@@ -64,7 +64,7 @@ We trained hovernet with 130 images (100 from BBBC and 30 from Aits training ima
 #SBATCH -A project_name
 #SBATCH -t 3:00:00
 #SBATCH -n 5
-#python run_train.py --gpu='0,1,2,3' > nuclei_results.txt
+python run_train.py --gpu='0,1,2,3' > nuclei_results.txt
 ```
 
 
