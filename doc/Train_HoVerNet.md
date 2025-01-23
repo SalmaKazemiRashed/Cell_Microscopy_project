@@ -29,7 +29,7 @@ HoverNet/
 │   ├── run_infer.sh
 │   ├── HoverNet_evaluation_nuclei.ipynb
 │   ├── HoverNet_evaluation_test_data.ipynb
-│   ├── run_infer.sh
+│   ├── plot_train_loss.ipynb
 ├── dataset
 │   ├──Train
 │       ├── Images
@@ -89,3 +89,5 @@ We have plotted the training MSE loss of HoverNet for segmentation part as follo
 
 ![MSE_loss](_static/MSE_HOverNEt.png)
 
+
+However, for choosing the best model among U-Net models and HoVer-Net models we have used the same evaluation scripts from U-Net repo.
