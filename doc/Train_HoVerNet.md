@@ -27,8 +27,6 @@ HoverNet/
 │   ├── run_infer.py
 │   ├── epoch_run.sh
 │   ├── run_infer.sh
-│   ├── HoverNet_evaluation_nuclei.ipynb
-│   ├── HoverNet_evaluation_test_data.ipynb
 │   ├── plot_train_loss.ipynb
 ├── dataset
 │   ├──Train
