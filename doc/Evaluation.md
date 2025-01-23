@@ -1,51 +1,23 @@
-# More features here
+# Evaluation
+
+For evaluating the models we have used validation and test sets from  [Nuclei](https://www.sciencedirect.com/science/article/pii/S2352340922009726).
+
+We have compared two metrics as pixel-based Jaccard index and object-based F1-score where the threshold for comparing two objects are 90%.
 
 
-## Some text
+## U-Net evaluation
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-## Table
-
-| No.  |  Prime |
-| ---- | ------ |
-| 1    |  No    |
-| 2    |  Yes   |
-| 3    |  Yes   |
-| 4    |  No    |
+For evaluating U-Net models we have used our three best models 
 
 
 
-## Code blocks
-
-The following is a Python code block:
-```python
-  def hello():
-      print("Hello world")
-```
-
-And this is a C code block:
-```c
-#include <stdio.h>
-int main()
-{
-    printf("Hello, World!");
-    return 0;
-}
-```
+|    |F1_score_90 |	Average Jaccard | Index |	False | Negatives |	False Positives |	True Positives |	Detected Objects |	False Discovery | Rate |	Precision |	Recall |
+|3   | 	0.809952  | 0.871175        |	89.0  |	17.0  |	240.0 |	257.0     |	0.066148 |	0.933852 |   0.729483      |
+|12| 	0.806144 	0.880613 	98.0 	9.0 	231.0 	240.0 	0.037500 	0.962500 	0.702128
+14 	0.846058 	0.878350 	77.0 	17.0 	252.0 	269.0 	0.063197 	0.936803 	0.765957
 
 
-## Math
-
-This creates an equation:
-```{math}
-a^2 + b^2 = c^2
-```
-
-This is an in-line equation, {math}`a^2 + b^2 = c^2`, embedded in text.
+| Item         | Price     | # In stock |
+|--------------|-----------|------------|
+| Juicy Apples | 1.99      | *7*        |
+| Bananas      | **1.89**  | 5234       |
