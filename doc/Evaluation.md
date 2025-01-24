@@ -7,7 +7,7 @@ We have compared two metrics as pixel-based Jaccard index and object-based F1-sc
 The metrics that we have used for both architectures are Jaccard Index and F1-score where they both are defind based on Intersection over Union (IOU),
 The IoU measures the overlap of predicted and annotated objects and is calculated according to the following equation:
 
-```math
+```{math}
 IOU(A,B) = \dfrac {A \cap B }{A\cup B}
 ```
 
@@ -28,8 +28,8 @@ The following table shows the results for each U-Net model.
 
 
 
-    |F1_score_90   | Average Jaccard Index    | False Negatives  |  False Positives | True Positives  | Detected Objects  | False Discovery Rate |  Precision  | Recall |
-|---|--------------|--------------------------|------------------|------------------|-----------------|-------------------|----------------------|-------------|--------|
-|3  | 0.8099       | 0.87                     | 89               |   17             | 240             | 257               |  0.066               |    0.934    |  0.729 |
-|12 | 0.8061       | 0.88                     | 98               |   9              | 231             | 240               |  0.038               |    0.962    |  0.702 |
-|14 | 0.8461       | 0.88                     | 77               |   17             | 252             | 269               |  0.063               |    0.937    |  0.766 |
+|   |F1_score_90   | Average Jaccard Index    |  False Discovery Rate |  Precision  | Recall |
+|---|--------------|--------------------------|----------------------|-------------|--------|
+|3  | 0.8099       | 0.87                     | 0.066                |    0.934    |  0.729 |
+|12 | 0.8061       | 0.88                     | 0.038                |    0.962    |  0.702 |
+|14 | 0.8461       | 0.88                     | 0.063                |    0.937    |  0.766 |
