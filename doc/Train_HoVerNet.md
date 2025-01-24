@@ -40,6 +40,13 @@ HoverNet/
 │       └── Labels
 │       │       ├──*.mat
 ├── output
+│   ├──epoch_out
+│       ├── json
+│       ├── mat
+│       ├── overlay
+│       ├── qupath
+
+
 ```
 
 We have run hovernet pytorch version using the conda env provided [here](https://github.com/vqdang/hover_net.git). 
