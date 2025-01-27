@@ -1,51 +1,28 @@
-# More features here
+# Full pipeline
+
+After conducting accurate annotations published in [Nuclei](https://www.sciencedirect.com/science/article/pii/S2352340922009726) and [Cytosol](https://www.sciencedirect.com/science/article/pii/S2352340924011107),
+training U-Net and HoVer-Net models for segmenting the nuclei channel, we have compared the top 3 best models from each architecture and at the end we have used the best U-Net model that we have trained on
+our own annotated images as well as some images from [BBBC](https://bbbc.broadinstitute.org/) image set.
+The model's performance on test set were validated where it had 85% F1-score on 90% overlapping threshold and 88% average Jaccard index.
 
 
-## Some text
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The experiment were conducted in two Oxidative stress (A, B) and non-oxiditive stress (C,D) groups each group has one repetition all saved in 79 groups for almost 18000 genes.
+The status of each group of raw data and how we proceeded to analyse is summarized in progress_log/plateProgress_done.xlsx file.
+Some of plates were missing or there were several copies. We had to deal with missing or repeated data.
 
 
-## Table
-
-| No.  |  Prime |
-| ---- | ------ |
-| 1    |  No    |
-| 2    |  Yes   |
-| 3    |  Yes   |
-| 4    |  No    |
+The overall process for each plate is as follows:
+1)	Download from swestore
+2)	Run extract_convert script over plate to extract only d0 channel.
+3)	Normalize them to 8bit images using bash command
+4)	Save the names in 4_filelist folder  and remove .C01 from  the folder and only keep .png ones (6144 images in each full plate) 
+5)	Copy  and run prediction model over them
+6)	Copy back to cluster storage
+7)	Run area_size.py script over them and copy the file to A, or B, or C, or D 
+8)	Run the plot over all of them
 
 
 
-## Code blocks
 
-The following is a Python code block:
-```python
-  def hello():
-      print("Hello world")
-```
+# Download and Extract
 
-And this is a C code block:
-```c
-#include <stdio.h>
-int main()
-{
-    printf("Hello, World!");
-    return 0;
-}
-```
-
-
-## Math
-
-This creates an equation:
-```{math}
-a^2 + b^2 = c^2
-```
-
-This is an in-line equation, {math}`a^2 + b^2 = c^2`, embedded in text.
