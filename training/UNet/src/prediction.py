@@ -34,9 +34,6 @@ config_vars = utils.dirtools.setup_experiment(config_vars, experiment_name)
 
 data_partitions = utils.dirtools.read_data_partitions(config_vars)
 
-config_vars
-
-# In[4]:
 
 
 # Device configuration
