@@ -19,7 +19,7 @@ Since overlap of predicted and original objects is rarely 100\% we selected a fe
 
 For evaluating U-Net models we have used our three best models as Model3, Model12, and Model14 where in the main manuscript we have mentioned 
 the different training sets that they were trained on. 
-The whole evaluation of U-Net models are described in evaluation/UNet/UNET_concise_Evaluation.ipynb
+The whole evaluation process of U-Net models are described in evaluation/UNet/UNET_concise_Evaluation.ipynb
 
 The required functions are mostly taken from  [carpenterlab](https://github.com/carpenterlab/unet4nuclei.git) repo and revised according to our models and data.
 Besides, a classification of Tiny, Small, Normal and Large nuclei is also performed to see in which category the models work best.
@@ -41,8 +41,9 @@ The following table shows the results for each U-Net model on test set.
 
 For evaluting the performnace of HoVer-Net models on validation and test set (same as UNet from [Nuclei](https://www.sciencedirect.com/science/article/pii/S2352340922009726))
 we have used loadmat function from scipy.io python library and then we compared the "inst_map" feature of ".mat" files as predicted masks to be able to compare to gold annotated segmentation masks.
-Same as UNet small objects (minsize = 25) were removed during comparison. 
 
+Same as UNet evaluation process, small objects (minsize = 25) were removed during comparison. 
+The whole evaluation process of HoVer-Net models are described in evaluation/HoVerNet/HoverNet_concise_evaluation.ipynb.
 
 The following table shows the results for the best three top models of  HoVer-Net architecture valiadated on test set.
 
