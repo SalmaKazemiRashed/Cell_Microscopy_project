@@ -1,3 +1,6 @@
+The steps of this project as microscopy nuclei segmentation for cell death can be followed through https://salmakazemirashed.github.io/Cell_Microscopy_project/ documentation workflow
+or through following steps.
+
 # Conda Environment
 
 For training UNet models We have created a Conda environment and export it
