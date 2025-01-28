@@ -79,7 +79,7 @@ put plate_number.tar.gz
 
 The other way to access files on Swestore was winscp tool which is a win-based tool.
 
-![WinSCP](_static/WinSCP.png)
+![WinSCP](doc/_static/WinSCP.png)
 
 
 
@@ -104,7 +104,7 @@ or through extract_conversion.py script.
 
 For a correct, complete plate we should have A-P rows as well as 01-24 columns (6144).
 
-![plate](_static/data.png)
+![plate](doc/_static/data.png)
 
 with the following command we could see if each well (A01-P24) and 16 images per well exist.
 
@@ -189,13 +189,13 @@ python3 preprocessing.py
 example of raw annotated image
 
 
-![annotated](_static/annot.png)
+![annotated](doc/_static/annot.png)
 
 
 Three class (background, inside and boundary pcs) images are as follows:
 
 
-![boundary](_static/class.png)
+![boundary](doc/_static/class.png)
 
 
 ## Training
@@ -262,7 +262,7 @@ The data required to be in .mat format as having centeroind points of objects. T
 
 An example of annotated masks with centric points:
 
-![annotated](_static/img_center.png)
+![annotated](doc/_static/img_center.png)
 
 
 The training, prediction and evaluation scripts for HoverNet are as follows:
@@ -343,7 +343,7 @@ done
 
 We have plotted the training MSE loss of HoverNet for segmentation part as follows:
 
-![MSE_loss](_static/MSE_HOverNEt.png)
+![MSE_loss](doc/_static/MSE_HOverNEt.png)
 
 
 However, for choosing the best model among U-Net models and HoVer-Net models we have used the same evaluation scripts from U-Net repo.
