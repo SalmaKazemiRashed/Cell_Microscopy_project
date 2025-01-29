@@ -11,7 +11,7 @@ conda env export --from-history
 
 It is possible to recreate conda env through
 ```console
-conda env create -f environment.yml
+conda env create -f environment_ubuntu.yml
 ```
 and run the code in that environment or use the containerized version.
 
