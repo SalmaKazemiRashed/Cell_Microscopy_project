@@ -160,8 +160,8 @@ clear_session()
 global model
 global graph
 
-model = utils.model_builder.get_model_3_class(1104, 1104,1)                                             
-model.load_weights('model_14.hdf5')
+model = utils.model_builder.get_model_3_class(1104, 1104,1)                                              #config_vars["input_dimensions"])
+model.load_weights('model_14.hdf5')#config_vars["model_file"]) 
 model._make_predict_function()
 tf.Graph()
 graph = tf.get_default_graph()
